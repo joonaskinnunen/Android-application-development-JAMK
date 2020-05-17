@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SumCalculator</string>
+    <string name="button0Text">0</string>
+    <string name="button1Text">1</string>
+    <string name="button2Text">2</string>
+    <string name="button3Text">3</string>
+    <string name="button4Text">4</string>
+    <string name="button5Text">5</string>
+    <string name="button6Text">6</string>
+    <string name="button7Text">7</string>
+    <string name="button8Text">8</string>
+    <string name="button9Text">9</string>
+    <string name="buttonSumText">+</string>
+    <string name="buttonResultText">=</string>
+    <string name="buttonClearText">C</string>
+    <string name="resultTextView"></string>
+    <string name="imageDescription">Calculator image</string>
+</resources>

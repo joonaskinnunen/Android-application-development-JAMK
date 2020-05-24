@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EmployeesApp</string>
+    <string name="profilePicture">Profile picture</string>
+    <string name="sendEmail">Send email</string>
+</resources>

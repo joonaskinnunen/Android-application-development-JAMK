@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import kotlinx.android.synthetic.main.country_item.view.*
 import org.json.JSONArray
 import org.json.JSONObject
@@ -39,6 +41,7 @@ class CountriesAdapter(private val countries: JSONArray, private val context: Co
         holder: CountriesAdapter.ViewHolder,
         position: Int)
     {
+        holder.setIsRecyclable(false)
         val country: JSONObject? = countries.getJSONObject(position)
         val cases: JSONObject = country?.get("cases") as JSONObject
         val name: String? = country["country"].toString()
@@ -51,10 +54,11 @@ class CountriesAdapter(private val countries: JSONArray, private val context: Co
         Log.d("flagName: ", flagName)
         val id = context.resources.getIdentifier(flagName, "drawable", context.packageName)
         Log.d("drawableId", id.toString())
-        if(id != 0) {
-            holder.countryItemImageView.setBackgroundResource(id)
+
+        if(id == 0) {
+            holder.countryItemImageView.setVisibility(ImageView.INVISIBLE)
         } else {
-            holder.countryItemImageView.setImageResource(R.drawable.missing_flag)
+            holder.countryItemImageView.setBackgroundResource(id)
         }
     }
 

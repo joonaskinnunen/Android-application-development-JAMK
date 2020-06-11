@@ -2,6 +2,7 @@ package com.joonaskinnunen.coronavirusmonitor
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_country.*
 import kotlinx.android.synthetic.main.activity_country.nameTextView
@@ -59,8 +60,10 @@ class CountriesActivity : AppCompatActivity() {
 
             val flagName = name.replace("-", "_", true).toLowerCase()
             val id = resources.getIdentifier(flagName, "drawable", packageName)
-            if(id != 0) {
-                this.countryImageView.setBackgroundResource(id)
+            if(id == 0) {
+                countryImageView.setVisibility(ImageView.INVISIBLE)
+            } else {
+                countryImageView.setBackgroundResource(id)
             }
         }
     }

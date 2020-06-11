@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Koronavirus monitori</string>
+    <string name="nameLabelText">Maa</string>
+    <string name="casesTextViewText">"Tartuntoja: "</string>
+    <string name="newCasesTextViewText">"Uusia tartuntoja: "</string>
+    <string name="activeCasesTextViewText">"Sairastuneita tällä hetkellä: "</string>
+    <string name="totalCasesTextViewText">"Tartuntoja yhteensä: "</string>
+    <string name="casesPerMTextViewText">"Tartuntoja per miljoona ihmistä: "</string>
+    <string name="totalDeathsTextViewText">"Kuolemantapauksia yhteensä: "</string>
+    <string name="newDeathsTextViewText">"Uusia kuolemantapauksia: "</string>
+    <string name="deathsPerMTextViewText">"Kuolemantapauksia per miljoona ihmistä: "</string>
+    <string name="updateDateTextViewText">"Tiedot päivitetty: "</string>
+</resources>

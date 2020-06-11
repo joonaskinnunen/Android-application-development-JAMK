@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Coronavirus monitor</string>
+    <string name="nameLabelText">Country</string>
+    <string name="casesTextViewText">"Cases: "</string>
+    <string name="newCasesTextViewText">"New cases: "</string>
+    <string name="activeCasesTextViewText">"Active cases: "</string>
+    <string name="totalCasesTextViewText">"Total cases: "</string>
+    <string name="casesPerMTextViewText">"Cases per million people: "</string>
+    <string name="totalDeathsTextViewText">"Total deaths: "</string>
+    <string name="newDeathsTextViewText">"New deaths: "</string>
+    <string name="deathsPerMTextViewText">"Deaths per million people: "</string>
+    <string name="updateDateTextViewText">"Statistics updated: "</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EmployeesFragmentsApp</string>
+    <string name="nameTextViewText">Name</string>
+    <string name="phoneTextViewText">Phone</string>
+    <string name="titleTextViewText">Title</string>
+    <string name="emailTextViewText">Email</string>
+    <string name="departmentTextViewText">Department</string>
+    <string name="imageViewDescriptionText">Employees profile photo</string>
+    <string name="employeeIntroductionTextViewText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+</resources>

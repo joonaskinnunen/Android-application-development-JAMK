@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WeatherWidget</string>
+    <string name="iconImageText">Weather icon image</string>
+    <string name="cityTextViewText">City</string>
+    <string name="conditionTextViewText">Condition</string>
+    <string name="temperatureTextViewText">Temperature</string>
+    <string name="timeTextViewText">Time</string>
+    <string name="refreshImageText">Refresh widget</string>
+</resources>

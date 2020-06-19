@@ -18,6 +18,7 @@ The code for all apps can be found in its entirety in its own folders.
 **E13 - ShoppingList with a Room:** https://youtu.be/jLW0J6rYT9o<br />
 **E14 - Android Room with a View:** https://youtu.be/vlhzk_KlyQ0<br />
 **E15 - Employees Fragments App:** https://youtu.be/rFNq-Z7AAIk<br />
-**E16 - Weather App:** https://www.youtube.com/watch?v=N6l5ouMUljE
+**E16 - Weather App:** https://www.youtube.com/watch?v=N6l5ouMUljE<br />
+**E18 - Use an ads in Android application:** https://youtu.be/p_M-cQEpQq0
 
 Apps that doesn't have a video has screenshots from app in its folder.

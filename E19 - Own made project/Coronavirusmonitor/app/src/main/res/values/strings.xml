@@ -10,4 +10,5 @@
     <string name="newDeathsTextViewText">"New deaths: "</string>
     <string name="deathsPerMTextViewText">"Deaths per million people: "</string>
     <string name="updateDateTextViewText">"Statistics updated: "</string>
+    <string name="notCases">0 / not known</string>
 </resources>

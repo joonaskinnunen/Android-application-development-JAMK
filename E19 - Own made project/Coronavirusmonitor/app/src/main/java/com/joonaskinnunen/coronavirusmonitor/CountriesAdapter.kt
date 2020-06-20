@@ -5,17 +5,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import kotlinx.android.synthetic.main.country_item.view.*
 import org.json.JSONArray
 import org.json.JSONObject
 
-class CountriesAdapter(private val countries: JSONArray, private val context: Context)
-    : RecyclerView.Adapter<CountriesAdapter.ViewHolder>() {
+class CountriesAdapter(private val countries: ArrayList<JSONObject>, private val context: Context)
+    : RecyclerView.Adapter<CountriesAdapter.ViewHolder>(), Filterable {
+
+    private var countryList: List<JSONObject>? = countries
+    private var filteredCountryList: List<JSONObject>? = countryList
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountriesAdapter.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -31,7 +34,7 @@ class CountriesAdapter(private val countries: JSONArray, private val context: Co
         init {
             itemView.setOnClickListener {
                 val intent = Intent(view.context, CountriesActivity::class.java)
-                intent.putExtra("country",countries[adapterPosition].toString())
+                intent.putExtra("country", filteredCountryList?.get(adapterPosition)?.toString())
                 view.context.startActivity(intent)
             }
         }
@@ -42,7 +45,7 @@ class CountriesAdapter(private val countries: JSONArray, private val context: Co
         position: Int)
     {
         holder.setIsRecyclable(false)
-        val country: JSONObject? = countries.getJSONObject(position)
+        val country: JSONObject? = filteredCountryList?.get(position)
         val cases: JSONObject = country?.get("cases") as JSONObject
         val name: String? = country["country"].toString()
         val totalCases: String? = cases["total"].toString()
@@ -51,9 +54,7 @@ class CountriesAdapter(private val countries: JSONArray, private val context: Co
         holder.casesTextView.text = totalCases
 
         val flagName = name?.replace("-", "_", true)?.toLowerCase()
-        Log.d("flagName: ", flagName)
         val id = context.resources.getIdentifier(flagName, "drawable", context.packageName)
-        Log.d("drawableId", id.toString())
 
         if(id == 0) {
             holder.countryItemImageView.setVisibility(ImageView.INVISIBLE)
@@ -62,5 +63,37 @@ class CountriesAdapter(private val countries: JSONArray, private val context: Co
         }
     }
 
-    override fun getItemCount(): Int = countries.length()
+    override fun getItemCount(): Int = filteredCountryList!!.size
+
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence): FilterResults {
+                val charSequenceString = constraint.toString()
+                if (charSequenceString.isEmpty()) {
+                    filteredCountryList = countryList
+                } else {
+                    val filteredList: MutableList<JSONObject> = ArrayList()
+                    countryList?.forEach { country ->
+                        if (country["country"].toString().toLowerCase()
+                                .contains(charSequenceString.toLowerCase())
+                        ) {
+                            filteredList.add(country)
+                        }
+                        filteredCountryList = filteredList
+                    }
+                }
+                val results = FilterResults()
+                results.values = filteredCountryList
+                return results
+            }
+
+            override fun publishResults(
+                constraint: CharSequence,
+                results: FilterResults
+            ) {
+                filteredCountryList = results.values as List<JSONObject>
+                notifyDataSetChanged()
+            }
+        }
+    }
 }

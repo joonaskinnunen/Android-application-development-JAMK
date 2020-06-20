@@ -33,19 +33,19 @@ class CountriesActivity : AppCompatActivity() {
 
             Log.d("newdeaths", newDeaths)
             if(newCases == "null") {
-                newCases = "0"
+                newCases = R.string.notCases.toString()
             }
 
             if(activeCases == "null") {
-                activeCases = "0"
+                activeCases = R.string.notCases.toString()
             }
 
             if(newDeaths == "null") {
-                newDeaths = "0"
+                newDeaths = R.string.notCases.toString()
             }
 
             if(updateDate == "null") {
-                updateDate = ""
+                updateDate = R.string.notCases.toString()
             }
 
             this.nameTextView.text = name

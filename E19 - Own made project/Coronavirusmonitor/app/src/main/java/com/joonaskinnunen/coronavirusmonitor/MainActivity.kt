@@ -25,13 +25,11 @@ class MainActivity : AppCompatActivity() {
         search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             override fun onQueryTextSubmit(queryString: String): Boolean {
-                Log.d("queryString", queryString)
                 return false
             }
 
             override fun onQueryTextChange(queryString: String): Boolean {
-                countriesAdapter?.getFilter()!!.filter(queryString)
-                Log.d("queryString", queryString)
+                countriesAdapter?.filter!!.filter(queryString)
                 return true
             }
         })
@@ -55,9 +53,6 @@ class MainActivity : AppCompatActivity() {
                 val list: ArrayList<JSONObject>? = ArrayList()
                 for (i in 0 until data.length()) {
                     val countryObj = data.getJSONObject(i)
-                    Log.d("Country: ", countryObj["country"].toString())
-                    Log.d("data", data.toString())
-                    Log.d("Country: ", countryObj["country"].toString())
                     list?.add(countryObj)
                 }
                 countriesAdapter = list?.let { CountriesAdapter(it, this) }

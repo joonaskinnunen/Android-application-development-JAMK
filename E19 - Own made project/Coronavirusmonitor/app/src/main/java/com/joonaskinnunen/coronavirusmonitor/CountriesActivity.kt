@@ -26,26 +26,25 @@ class CountriesActivity : AppCompatActivity() {
             var activeCases = cases?.get("active")?.toString()
             val totalCases = cases?.get("total")?.toString()
             val casesPerM = cases?.get("1M_pop")?.toString()
-            val totalDeaths: String? = deaths["total"].toString()
-            var newDeaths: String? = deaths["new"].toString()
-            val deathsPerM: String? = deaths["1M_pop"].toString()
-            var updateDate: String? = country["day"].toString()
+            val totalDeaths: String = deaths["total"].toString()
+            var newDeaths = deaths["new"].toString()
+            val deathsPerM = deaths["1M_pop"].toString()
+            var updateDate = country["day"].toString()
 
-            Log.d("newdeaths", newDeaths)
             if(newCases == "null") {
-                newCases = R.string.notCases.toString()
+                newCases = resources.getString(R.string.notCases)
             }
 
             if(activeCases == "null") {
-                activeCases = R.string.notCases.toString()
+                activeCases = resources.getString(R.string.notCases)
             }
 
             if(newDeaths == "null") {
-                newDeaths = R.string.notCases.toString()
+                newDeaths = resources.getString(R.string.notCases)
             }
 
             if(updateDate == "null") {
-                updateDate = R.string.notCases.toString()
+                updateDate = resources.getString(R.string.notCases)
             }
 
             this.nameTextView.text = name
